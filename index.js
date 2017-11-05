@@ -87,9 +87,19 @@ app.post('/webhook/', function (req, res) {
 	        }
 		    else if (text.indexOf("stocks") >= 0) {
 		    	sendQuickReply(sender, "What region are you interested in?")
-		    } else {
-		    	sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
-			}
+		    } 
+		    else if(text.indexOf("hi")>=0 || text.indexOf("hello")>=0){
+		    	sendTextMessage(sender, "Hello Human, I am PierreBot.\nHow are you?")
+		    }
+		    else if(text.indexOf("bye")>=0){
+		    	sendTextMessage(sender, "Goodbye Human, Have a Good Day!")
+		    }
+		    else if(text === "good" || text === "thanks"){
+		    	sendTextMessage(sender, (Y))
+		    }
+		    else{
+		    	sendTextMessage(sender, "Sorry I am not powerful enough to answer this :(")
+		    }
 	    }
     }
     res.sendStatus(200)
