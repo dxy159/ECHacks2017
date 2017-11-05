@@ -82,6 +82,7 @@ app.post('/webhook/', function (req, res) {
 	        			var chunk = (i + 1) + ":\t" + data[i].name + "\tMarket Cap: " + data[i].marketCap + "\tDate: " + data[i].date + "\n"
 	        			message += chunk
 	        		}
+	        		sendTextMessage(sender, message)
 	        	})
 	        }
 		    else if (text.indexOf("stocks") >= 0) {
