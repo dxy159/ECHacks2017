@@ -61,3 +61,7 @@ function getEarnings(callback){
 getEarnings(function(data) {
 	console.log(data)
 })
+
+module.exports{
+	getEarnings: getEarnings
+}
