@@ -94,8 +94,8 @@ app.post('/webhook/', function (req, res) {
 		    else if(text.indexOf("bye")>=0){
 		    	sendTextMessage(sender, "Goodbye Human, Have a Good Day!")
 		    }
-		    else if(text === "good" || text === "thanks"){
-		    	sendTextMessage(sender, (Y))
+		    else if(text.indexOf("good")>=0 || text.indexOf("thanks")>=0){
+		    	sendTextMessage(sender, "(Y)")
 		    }
 		    else{
 		    	sendTextMessage(sender, "Sorry I am not powerful enough to answer this :(")
