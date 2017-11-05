@@ -62,6 +62,6 @@ getEarnings(function(data) {
 	console.log(data)
 })
 
-module.exports{
+module.exports = {
 	getEarnings: getEarnings
 }
