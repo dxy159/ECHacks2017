@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const request = require('request')
 const app = express()
 const stocks = require('./stocks.js')
+const earnings = require('./earnings.js')
 
 app.set('port', (process.env.PORT || 5000))
 
@@ -72,6 +73,15 @@ app.post('/webhook/', function (req, res) {
 	        			message += chunk
 	        		}
 	        		sendTextMessage(sender, message)
+	        	})
+	        }
+	        else if(text.indexOf("earnings") >= 0){
+	        	earnings.getEarnings(function(data){
+	        		var meassage = "Here are the next earnings dates of companies listed at the Nasdaq: \n"
+	        		for (var i = 0; i < data.length; i++) {
+	        			var chunk = (i + 1) + ":\t" + data[i].name + "\tMarket Cap: " + data[i].marketCap + "\tDate: " + data[i].date + "\n"
+	        			message += chunk
+	        		}
 	        	})
 	        }
 		    else if (text.indexOf("stocks") >= 0) {
