@@ -17,7 +17,7 @@ function getEarnings(callback){
 				"marketCap": one1[1].replace('</b>', '').replace('<b>', ''),
 				"date": $first.children().eq(2).html().replace(/\s+/g,'')
 			}
-			callback(one.name + one.marketCap + one.date)
+			//callback(one.name + one.marketCap + one.date)
 
 			var $second = $table.children().eq(1)
 			var second1 = $second.children().eq(1).children('a').html().split('<br>')
@@ -26,7 +26,7 @@ function getEarnings(callback){
 				"marketCap": second1[1].replace('</b>', '').replace('<b>', ''),
 				"date": $second.children().eq(2).html().replace(/\s+/g,'')
 			}
-			callback(two.name + two.marketCap + two.date)
+			//callback(two.name + two.marketCap + two.date)
 
 			var $third = $table.children().eq(2)
 			var third1 = $third.children().eq(1).children('a').html().split('<br>')
@@ -35,7 +35,7 @@ function getEarnings(callback){
 				"marketCap": third1[1].replace('</b>', '').replace('<b>', ''),
 				"date": $third.children().eq(2).html().replace(/\s+/g,'')
 			}
-			callback(three.name + three.marketCap + three.date)
+			//callback(three.name + three.marketCap + three.date)
 
 			var $fourth = $table.children().eq(3)
 			var fourth1 = $fourth.children().eq(1).children('a').html().split('<br>')
@@ -44,7 +44,7 @@ function getEarnings(callback){
 				"marketCap": fourth1[1].replace('</b>', '').replace('<b>', ''),
 				"date": $fourth.children().eq(2).html().replace(/\s+/g,'')
 			}
-			callback(four.name + four.marketCap + four.date)
+			//callback(four.name + four.marketCap + four.date)
 
 			var $fifth = $table.children().eq(4)
 			var fifth1 = $fifth.children().eq(1).children('a').html().split('<br>')
@@ -53,7 +53,11 @@ function getEarnings(callback){
 				"marketCap": fifth1[1].replace('</b>', '').replace('<b>', ''),
 				"date": $fifth.children().eq(2).html().replace(/\s+/g,'')
 			}
-			callback(five.name + five.marketCap + five.date)
+			//callback(five.name + five.marketCap + five.date)
+
+			var array = [one, two, three, four, five]
+
+			callback(array)
 		}
 	})
 }
