@@ -79,7 +79,7 @@ app.post('/webhook/', function (req, res) {
 	        	earnings.getEarnings(function(data){
 	        		var message = "Here are the next earnings dates of companies listed at the Nasdaq: \n"
 	        		for (var i = 0; i < data.length; i++) {
-	        			var chunk = (i + 1) + ":\t" + data[i].name + "\tMarket Cap: " + data[i].marketCap + "\tDate: " + data[i].date + "\n"
+	        			var chunk = (i + 1) + ":\t" + data[i].name + "\t, " + data[i].marketCap + "\t, Date: " + data[i].date + "\n"
 	        			message += chunk
 	        		}
 	        		sendTextMessage(sender, message)
